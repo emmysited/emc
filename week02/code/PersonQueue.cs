@@ -13,7 +13,9 @@ public class PersonQueue
     /// <param name="person">The person to add</param>
     public void Enqueue(Person person)
     {
-        _queue.Insert(0, person);
+        // FIX: Was using Insert(0, person) which added to the FRONT of the queue.
+        // A queue must add to the BACK (FIFO), so we use Add() instead.
+        _queue.Add(person);
     }
 
     public Person Dequeue()
